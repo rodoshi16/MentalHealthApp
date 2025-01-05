@@ -15,13 +15,10 @@ export const ChatBox = () => {
             return;  
         }
 
-        const newMessage = {sender: "User", message: userInput}
-        setChatHistory(prevHistory => [...prevHistory, newMessage])
-        setUserInput(""); 
+        const recentText = {sender: "User", message: userInput}
 
-        setUserInput(""); 
-
-
+        setChatHistory( prevHistory => [...prevHistory, recentText]);
+        setUserInput("");
 
     }
 
@@ -41,19 +38,37 @@ export const ChatBox = () => {
                     <p2>I am here to listen!</p2>
                 </div>
             </div>
-            <input 
-            type= "text"
-            className= "TextBar"
-            placeholder="Type your message..."
-            autocomplete="on"
-            value={userInput}
-            onChange= {(e) => setUserInput(e.target.value)}
-            ></input>
-            <div className= "SendIcon" onClick= {handleSendMessage}>
-                <img
-                    src={sendImage}
-                />
 
+            <div className="ChatWindow">
+                {chatHistory.map((text, index) => (
+                    <div
+                        key={index}
+                        className={text.sender == "User" ? "UserText": "BotText"}
+                    >
+                        {text.message}
+                    </div>
+
+                ))}
+
+            </div>
+
+            <div className="TypeSection">
+                <input 
+                type= "text"
+                className= "TextBar"
+                placeholder="Type your message..."
+                autocomplete="on"
+                value={userInput}
+
+                onChange= {(e) => setUserInput(e.target.value)}
+                ></input>
+
+                <div className= "SendIcon" onClick= {handleSendMessage}>
+                    <img
+                        src={sendImage}
+                    />
+
+                </div>
             </div>
         </div>
 
