@@ -25,48 +25,6 @@ export const ChatBox = () => {
 
     }
 
-
-    // useEffect(() => {
-    //     fetch("/mindmate").then((res) => {
-    //         setdata({
-                
-    //         })
-    //     }
-    // )
-    // })
-
-    // axios.get('/api/users')
-    //     .then(response => {
-    //         console.log(response.data)
-    //     })
-    //     .catch(error => {
-    //         console.error('Error fetching data: ', error)
-    //     })
-
-
-    // const handleSubmit = (e) => {
-    //     e.preventDefault(); 
-
-    //     fetch(
-    //         'http://localhost:5000/mindmate', 
-    //         {
-    //             method: 'POST', 
-    //             body: JSON.stringify({
-    //                 todo, 
-    //                 completed: false
-    //             })
-    //         .then(res => res.json())
-    //         .then(() => {
-    //             console.log("Mindmate is running")
-    //         })
-    //         .catch(e => {
-    //             console.log(e.message)
-    //         })
-
-    //         }
-    //     )
-    // }
-
     return (
         <div className= "Bot-container">
             <div className='Bot-header'>
