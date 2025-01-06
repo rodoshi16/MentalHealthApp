@@ -12,12 +12,10 @@
   height: 500px; 
   background-color: #242424;
   border-radius: 30px; 
-
   display: flex; 
   justify-content: center;
   flex-direction: column;
   
-
 }
 
 .Bot-header{
@@ -25,7 +23,6 @@
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
   padding: 10px;
-
   display: flex;
   gap: 0px; 
 
@@ -34,7 +31,6 @@
 .Bot-logo{
   margin-right: 5px;
   border-radius: 50%; 
-
 }
 
 .Bot-title{
@@ -48,7 +44,6 @@
   display: flex;
   align-items: center;
   padding: 10px;
-
   
 }
 
@@ -95,5 +90,16 @@
   word-wrap: break-word; 
   text-align: left;
   
+}
+
+.BotText{
+  background-color: white; 
+  color: black; 
+  padding: 10px; 
+  border-radius: 20px; 
+  max-width: 40%;
+  align-self: flex-start; 
+  word-wrap: break-word; 
+  text-align: left;
 }
 

@@ -16,11 +16,38 @@ export const ChatBox = () => {
         }
 
         const recentText = {sender: "User", message: userInput}
-
         setChatHistory( prevHistory => [...prevHistory, recentText]);
+
+        axios({
+            url: "http://localhost:5000/mindmate", 
+            method: "POST", 
+            headers: {
+                'Content-Type': 'application/json',
+            },
+
+            data: {
+                user_Input: userInput, 
+                chat_history: chatHistory, 
+            }
+
+        })
+    
+        .then((res) => {
+            const botResponse = res.data.response; 
+            const botText = {sender: "Bot", message: botResponse}; 
+
+            setChatHistory(prevHistory => [...prevHistory, botText])
+            
+        })
+    
+        .catch((err) => {
+            console.log(err); 
+        })
+
         setUserInput("");
 
     }
+
 
     return (
         <div className= "Bot-container">
@@ -43,7 +70,7 @@ export const ChatBox = () => {
                 {chatHistory.map((text, index) => (
                     <div
                         key={index}
-                        className={text.sender == "User" ? "UserText": "BotText"}
+                        className={text.sender === "User" ? "UserText": "BotText"}
                     >
                         {text.message}
                     </div>
