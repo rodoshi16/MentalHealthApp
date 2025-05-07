@@ -2,20 +2,6 @@
 
 **MindMate** is an intelligent, sentiment-aware mental health chatbot that engages users with empathetic, uplifting, and supportive responses. It uses NLP (via Facebook's BlenderBot), sentiment analysis (via TextBlob), and a beautiful React interface to help users feel heard and understood.
 
----
-
-## 🏗️ Project Structure
-
-MindMate/
-├── backend/
-│ ├── app.py
-├── frontend/
-│ ├── src/
-│ │ ├── App.js
-│ │ ├── App.css
-│ │ └── Components/
-│ │ └── Box.js
-
 
 ---
 
