@@ -1,70 +1,74 @@
-# Getting Started with Create React App
+# 🧠 MindMate – A Mental Health Chatbot
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**MindMate** is an intelligent, sentiment-aware mental health chatbot that engages users with empathetic, uplifting, and supportive responses. It uses NLP (via Facebook's BlenderBot), sentiment analysis (via TextBlob), and a beautiful React interface to help users feel heard and understood.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🏗️ Project Structure
 
-### `npm start`
+MindMate/
+├── backend/
+│ ├── app.py
+├── frontend/
+│ ├── src/
+│ │ ├── App.js
+│ │ ├── App.css
+│ │ └── Components/
+│ │ └── Box.js
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## 🚀 Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- 🤖 AI-generated responses using `facebook/blenderbot-400M-distill`
+- 💬 Real-time chatting with contextual awareness
+- 🌈 Sentiment-based tone adjustment (uplifting, supportive, or neutral)
+- 🧠 Mental health–focused prompts
+- 🎨 Visually appealing React frontend
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🛠️ Tech Stack
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+**Backend:**
+- Python
+- Flask
+- Flask-CORS
+- Transformers (`BlenderBot`)
+- TextBlob
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**Frontend:**
+- React JS
+- CSS for styling
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 🧪 How It Works
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. **User inputs a message** on the React frontend.
+2. Message is sent via POST to the Flask backend (`/mindmate`).
+3. The backend:
+   - Analyzes sentiment using TextBlob.
+   - Adjusts the response tone accordingly.
+   - Generates a response with Facebook's BlenderBot.
+4. The response is displayed back in the chat UI.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 💻 Getting Started
 
-## Learn More
+### 1. Clone the Repo
+```bash
+git clone https://github.com/your-username/mindmate.git
+cd mindmate
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+2. Set Up the Backend
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+📦 Install Dependencies
+cd backend
+pip install flask flask-cors transformers textblob
+python -m textblob.download_corpora
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+🚀 Run the Flask Server
+python app.py
