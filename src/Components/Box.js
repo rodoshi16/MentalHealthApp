@@ -18,8 +18,9 @@ export const ChatBox = () => {
         const recentText = {sender: "User", message: userInput}
         setChatHistory( prevHistory => [...prevHistory, recentText]);
 
+        //axios is making a post request to send user's response to local host to display it 
         axios({
-            url: "http://localhost:5000/mindmate", 
+            url: "http://localhost:3000/mindmate", 
             method: "POST", 
             headers: {
                 'Content-Type': 'application/json',
@@ -31,7 +32,7 @@ export const ChatBox = () => {
             }
 
         })
-    
+        //extracts bots message from the API response 
         .then((res) => {
             const botResponse = res.data.response; 
             const botText = {sender: "Bot", message: botResponse}; 
